@@ -1,0 +1,15 @@
+SRC = hello.o main.o  factorial.o
+
+all: hello
+
+hello:  $(SRC) 
+	gcc $(SRC) -o hello
+
+main.o: 
+factorial.o: 
+hello.o: hello.c
+	gcc -c hello.o
+	
+.PHONY : clean
+clean:
+	rm -rf *.o hello
